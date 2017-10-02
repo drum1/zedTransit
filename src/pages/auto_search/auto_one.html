@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>Search address</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content> 
+    <ion-item>
+    <ion-searchbar placeholder="Type in your search point...." [(ngModel)]="inputs.query"
+    (ionInput)="search()">
+    </ion-searchbar>
+  </ion-item>
+    <ion-list>
+        <ion-item *ngFor="let item of resultz" 
+            (click)="chooseItem(item)">
+            {{ item.description }}
+        </ion-item>
+    </ion-list>
+</ion-content>
